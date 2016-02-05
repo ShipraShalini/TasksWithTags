@@ -12,11 +12,12 @@ def search(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             url=createurl(SEARCHURL)
-            print url
-            print "formdta", form.cleaned_data
-            response = requests.post(url=url, data=(form.cleaned_data))
-            print response.__dict__
-            # response = json.loads(requests.get(url=url, data=(form.cleaned_data)._content))
+            # response = (requests.post(url=url, data=(form.cleaned_data))._content)
+
+            response =json.loads(requests.post(url=url, data=(form.cleaned_data))._content)
+            print type(response), response
+            # response = json.loads(response)
+            # print type(response), response
 
             #check if data is for one car or multiple
             if isinstance(response,list):

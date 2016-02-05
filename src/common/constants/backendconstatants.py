@@ -1,6 +1,6 @@
 #elasticsearch meta
-INDEX = "todo"
-DOC_TYPE = "task"
+INDEX = "task"
+DOC_TYPE = "todo"
 ANALYSER = "not_analyzed"
 
 #vaild statuses

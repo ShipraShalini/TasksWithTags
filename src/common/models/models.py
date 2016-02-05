@@ -3,7 +3,7 @@ from datetime import datetime
 from src.common.constants.backendconstatants import *
 
 class Task(DocType):
-    date_created = String(default=datetime.now())
+    date_created = String(default=str(datetime.now()))
     task = String(index=ANALYSER)
     tags = String(index=ANALYSER)
     status = String(index=ANALYSER)

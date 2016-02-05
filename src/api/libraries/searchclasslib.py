@@ -11,17 +11,8 @@ class SearchClass():
 
     def find(self, tags):
         tags=splittags(tags)
-        print "tags", tags
-        # tasks = self.s.filter().execute()
-        tasks = self.s.query("terms", tags=['Jap'])
-        print tasks.to_dict()
-        tasks= tasks.execute()
-        print "1", tasks.__dict__
-        if not tasks:
-            tasks = self.s.query("terms", tags=['Jap']).execute()
-
+        tasks = self.s.query("terms", tags=tags).execute()
         tasks = tasks._d_
-        print "tasks", tasks
         tasks = tasks['hits']['hits']
         task_list =[]
         for task in tasks:
