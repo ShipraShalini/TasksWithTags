@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<h2>{{ title }}</h2>
+<h4>{{ colour }} </h4>
+
+     <ul>
+     {% for key, value in data.items %}
+     <li> {{ key }}: {{ value }}</li>
+    {% endfor %}
+    </ul>
+
+
+    <ol type="1">
+        {% for task in list %}
+        <li>
+            <ul>
+                {% for key, value in task.items %}
+                    <li> {{ key }}: {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+
+    </ol>
+
+    <h3> {{ message }}</h3>
+
+{% endblock %}

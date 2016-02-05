@@ -1,0 +1,4 @@
+#max length, serialiser.py
+MAX_TASK_LENGTH = 50
+MAX_TAG_LENGTH = 100
+MAX_STATUS_LENGTH = 20
